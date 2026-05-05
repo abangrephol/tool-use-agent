@@ -1,11 +1,8 @@
 """
-Week 1: Tool-Using Agent — ReAct Loop with LangGraph + Ollama
-Built on: ~/Work/revidev/portofolio/01-foundation/tool-use-agent/
+Tool-Using Agent — ReAct Loop with LangGraph + Ollama
 
-Stack:
-- LangGraph 1.x (create_react_agent)
-- Ollama (qwen3.5:9b) — local, private, free
-- 3 tools: web_search, calculator, file_read
+A reasoning + acting agent that decides when to call tools based on user queries.
+Built with create_react_agent — the prebuilt LangGraph ReAct implementation.
 
 Run:
   source .venv/bin/activate
@@ -76,7 +73,7 @@ def build_agent():
 
 def main():
     print("=" * 60)
-    print("Tool-Using Agent — Week 1 Foundation")
+    print("Tool-Using Agent — ReAct Loop")
     print("Model: Ollama qwen3.5:9b | Tools: web_search, calculator, file_read")
     print("Type 'exit' to quit")
     print("=" * 60)
@@ -84,7 +81,7 @@ def main():
     agent, tools = build_agent()
     print(f"Tools loaded: {[t.name for t in tools]}")
 
-    thread_id = "week1-default"
+    thread_id = "default"
 
     while True:
         user = input("\nYou: ").strip()

@@ -1,4 +1,4 @@
-# Tool-Using Agent — Week 1 Foundation
+# Tool-Using Agent
 
 ## Stack
 - LangGraph 1.x (create_react_agent)
@@ -8,13 +8,15 @@
 ## Run
 ```bash
 source .venv/bin/activate
-python agent.py
+python agent.py          # CLI
+streamlit run streamlit_app.py  # Web UI
 ```
 
 ## Key Files
 - `agent.py` — ReAct loop agent with 3 tools (web_search, calculator, file_read)
-- `README.md` — Full documentation
-- `.venv/` — Python venv with all dependencies
+- `streamlit_app.py` — Web UI
+- `memory.py` — ChromaDB-backed conversation memory (see memory-agent project)
+- `requirements.txt` — Python dependencies
 
 ## Tools
 - `web_search` — DuckDuckGo via ddgs

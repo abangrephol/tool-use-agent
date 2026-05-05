@@ -1,8 +1,6 @@
 """
-Streamlit web UI for Tool-Using Agent (Week 1)
-Connects to Ollama or Groq for LLM inference.
-
-Set OLLAMA_BASE_URL orGROQ_API_KEY in Streamlit Cloud secrets.
+Streamlit web UI for Tool-Using Agent.
+Web interface for the ReAct loop agent.
 """
 
 import os
@@ -74,7 +72,7 @@ def build_agent(model):
 
 st.set_page_config(page_title="Tool-Using Agent", page_icon="🤖")
 st.title("🤖 Tool-Using Agent")
-st.markdown("**Week 1** — ReAct loop with LangGraph. Try asking something!")
+st.markdown("**ReAct loop with LangGraph.** Try asking something!")
 
 # Session state
 if "thread_id" not in st.session_state:
