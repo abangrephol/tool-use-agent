@@ -2,13 +2,15 @@
 
 ReAct loop agent built with LangGraph + Ollama (qwen3.5:9b). The foundation that all other agents extend.
 
+**[→ Deploy to Streamlit Cloud](https://streamlit.io/cloud)** — connect repo, deploy main branch, done in 2 min.
+
 ## Stack
 
 | Layer | Technology | Why |
 |-------|-----------|-----|
 | Orchestration | LangGraph 1.x | Production-grade, checkpointing, ReAct built-in |
 | LLM | Ollama qwen3.5:9b | 100% local, private, free |
-| Tools | MCP-style custom tools | Extensible via `@tool` decorator |
+| Tools | MCP-style custom `@tool` | Extensible, no MCP server needed yet |
 
 ## Tools
 
@@ -18,13 +20,23 @@ ReAct loop agent built with LangGraph + Ollama (qwen3.5:9b). The foundation that
 | `calculator` | Safe arithmetic evaluation |
 | `file_read` | Read any text file from disk (truncates at 5000 chars) |
 
-## Run
+## Run Locally
 
 ```bash
 cd ~/Work/revidev/portofolio/01-foundation/tool-use-agent
 source .venv/bin/activate
-python agent.py
+python agent.py          # CLI mode
+streamlit run streamlit_app.py  # Web UI
 ```
+
+## Deploy to Streamlit Cloud
+
+1. Push this repo to GitHub
+2. Go to [streamlit.io/cloud](https://streamlit.io/cloud)
+3. Connect your GitHub repo
+4. Set secrets (optional):
+   - `GROQ_API_KEY` — use Groq instead of local Ollama
+   - `OLLAMA_BASE_URL` — custom Ollama endpoint
 
 ## Architecture
 
